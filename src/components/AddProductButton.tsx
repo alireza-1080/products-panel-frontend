@@ -1,6 +1,6 @@
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from "lucide-react";
 
-import { Button } from "./ui/button"
+import { Button } from "./ui/button";
 
 export default function AddProductButton() {
   return (
@@ -12,5 +12,5 @@ export default function AddProductButton() {
     >
       <PlusIcon size={16} aria-hidden="true" className="text-green-500" />
     </Button>
-  )
+  );
 }
