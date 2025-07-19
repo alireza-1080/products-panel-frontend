@@ -13,12 +13,12 @@ export default function NavBar() {
         <div className="flex items-center gap-2">
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="/" className="text-primary hover:text-primary/90">
+            <Link to="/" className="text-primary hover:text-primary/90">
               <FlipWords
                 words={logoWords}
                 className="text-2xl font-bold text-[#d97757] md:text-4xl dark:text-[#d97757]"
               />
-            </a>
+            </Link>
           </div>
         </div>
         {/* Right side */}

@@ -20,9 +20,12 @@ const AddProductPage = () => {
 
   useEffect(() => {
     return () => {
-      console.log("unmount")
-    }
-  },[])
+      setName("");
+      setPrice("");
+      setImage("");
+      setIsLoading(false);
+    };
+  }, []);
 
   return (
     <div className="container mx-auto flex h-full flex-1 flex-col items-center justify-center">
