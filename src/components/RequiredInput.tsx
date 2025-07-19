@@ -1,6 +1,6 @@
 import { useId } from "react";
 
-import { Input } from "../components/ui/input";
+import { Input } from "../components/ui/Input";
 
 export default function RequiredInput({
   placeHolder,
@@ -19,7 +19,7 @@ export default function RequiredInput({
         placeholder={placeHolder}
         type="text"
         value={state}
-        onChange={() => setState}
+        onChange={(e) => setState(e.target.value)}
         className="sm:h-12 sm:px-5 sm:py-3 sm:text-lg"
       />
     </div>
