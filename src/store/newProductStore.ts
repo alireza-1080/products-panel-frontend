@@ -20,7 +20,7 @@ const useNewProductStore = create(
     isLoading: false,
     setName: (name) => set({ name }),
     setPrice: (price) => {
-      if (!isNaN(+price) && +price > 0) set({ price });
+      if (price.trim() === '' || !isNaN(Number(price))) set({ price });
     },
     setImage: (image) => set({ image }),
     setIsLoading: (value) => set({ isLoading: value }),

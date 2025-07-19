@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import RequiredInput from "../components/RequiredInput";
-import Button from "../components/StateFullButton";
+import Button from "../components/StatefulButton";
 import useNewProductStore from "../store/newProductStore";
 
 const AddProductPage = () => {

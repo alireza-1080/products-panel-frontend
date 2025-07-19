@@ -6,6 +6,7 @@ import RootLayout from "./RootLayout.tsx";
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
 import AddProductPage from "./pages/AddProductPage.tsx";
+import { StrictMode } from "react";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-    <RouterProvider router={router} />
-  </ThemeProvider>,
+  <StrictMode>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </StrictMode>,
 );
