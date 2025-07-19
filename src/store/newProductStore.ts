@@ -10,6 +10,7 @@ type NewProductStore = {
   setPrice: (value: string) => void;
   setImage: (value: string) => void;
   setIsLoading: (value: boolean) => void;
+  resetStore: () => void;
 };
 
 const useNewProductStore = create(
@@ -20,10 +21,11 @@ const useNewProductStore = create(
     isLoading: false,
     setName: (name) => set({ name }),
     setPrice: (price) => {
-      if (price.trim() === '' || !isNaN(Number(price))) set({ price });
+      if (price.trim() === "" || !isNaN(Number(price))) set({ price });
     },
     setImage: (image) => set({ image }),
     setIsLoading: (value) => set({ isLoading: value }),
+    resetStore: () => set({ name: "", price: "", image: "", isLoading: false }),
   })),
 );
 

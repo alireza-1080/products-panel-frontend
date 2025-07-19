@@ -12,6 +12,7 @@ const AddProductPage = () => {
   const setPrice = useNewProductStore((state) => state.setPrice);
   const setImage = useNewProductStore((state) => state.setImage);
   const setIsLoading = useNewProductStore((state) => state.setIsLoading);
+  const resetStore = useNewProductStore((state) => state.resetStore)
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,10 +21,7 @@ const AddProductPage = () => {
 
   useEffect(() => {
     return () => {
-      setName("");
-      setPrice("");
-      setImage("");
-      setIsLoading(false);
+      resetStore()
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
