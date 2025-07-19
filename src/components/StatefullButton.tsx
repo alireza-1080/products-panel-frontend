@@ -1,8 +1,8 @@
 import { LoaderCircleIcon } from "lucide-react";
 
-import { Button } from "../components/ui/Button";
+import { Button } from "./ui/Button";
 
-export default function StatefulButton({
+export default function StateFullButton({
   isDisabled,
   title,
 }: {

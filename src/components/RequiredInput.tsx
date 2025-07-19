@@ -9,7 +9,7 @@ export default function RequiredInput({
 }: {
   placeHolder: string;
   state: string;
-  setState: React.Dispatch<React.SetStateAction<string>>;
+  setState: (value: string) => void;
 }) {
   const id = useId();
   return (

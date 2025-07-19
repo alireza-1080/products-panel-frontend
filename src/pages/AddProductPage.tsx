@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import RequiredInput from "../components/RequiredInput";
-import Button from "../components/StatefullButton";
+import Button from "../components/StateFullButton";
+import useNewProductStore from "../store/newProductStore";
 
 const AddProductPage = () => {
-  const [name, setName] = useState<string>("");
-  const [price, setPrice] = useState<string>("0");
-  const [image, setImage] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const name = useNewProductStore((state) => state.name);
+  const price = useNewProductStore((state) => state.price);
+  const image = useNewProductStore((state) => state.image);
+  const isLoading = useNewProductStore((state) => state.isLoading);
+  const setName = useNewProductStore((state) => state.setName);
+  const setPrice = useNewProductStore((state) => state.setPrice);
+  const setImage = useNewProductStore((state) => state.setImage);
+  const setIsLoading = useNewProductStore((state) => state.setIsLoading);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
   };
+
+  useEffect(() => {
+    return () => {
+      console.log("unmount")
+    }
+  },[])
 
   return (
     <div className="container mx-auto flex h-full flex-1 flex-col items-center justify-center">
