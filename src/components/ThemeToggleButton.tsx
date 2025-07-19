@@ -1,6 +1,6 @@
 import { MoonIcon, SunIcon } from "lucide-react";
 
-import { Toggle } from "./ui/toggle";
+import { Toggle } from "./ui/Toggle";
 import { useTheme } from "../hooks/useTheme";
 
 export default function ThemeToggleButton() {

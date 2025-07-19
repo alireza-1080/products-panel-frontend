@@ -1,9 +1,11 @@
 import AddProductButton from "../AddProductButton";
 import ThemeToggleButton from "../ThemeToggleButton";
-import AuroraText from "../AuroraText";
 import { Link } from "react-router-dom";
+import { FlipWords } from "../ui/FlipWords";
 
 export default function NavBar() {
+  const logoWords = ["Products", "Panel"];
+
   return (
     <header className="relative border-b px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -12,9 +14,10 @@ export default function NavBar() {
           {/* Main nav */}
           <div className="flex items-center gap-6">
             <a href="/" className="text-primary hover:text-primary/90">
-              <AuroraText className="text-2xl font-bold md:text-4xl">
-                Products Panel
-              </AuroraText>
+              <FlipWords
+                words={logoWords}
+                className="text-2xl font-bold text-[#d97757] md:text-4xl dark:text-[#d97757]"
+              />
             </a>
           </div>
         </div>

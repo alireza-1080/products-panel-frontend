@@ -1,13 +1,31 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import "./index.css";
-import App from "./App.tsx";
+import RootLayout from "./RootLayout.tsx";
+import { createBrowserRouter } from "react-router-dom";
+import HomePage from "./pages/HomePage.tsx";
+import AddProductPage from "./pages/AddProductPage.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/add-product",
+        element: <AddProductPage />,
+      },
+    ],
+  },
+]);
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>,
+  <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <RouterProvider router={router} />
+  </ThemeProvider>,
 );
